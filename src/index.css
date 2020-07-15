@@ -1,5 +1,5 @@
 html { 
-	background-image: url("bg.jpg");
+	background-image: url("images/bg2.gif");
 	background-repeat: no-repeat;
 	background-attachment: fixed;	
 	-webkit-background-size: cover;
@@ -17,17 +17,17 @@ body {
 }
 
 .bluebg{
-	background-color: rgba(17, 29, 94, 0.7);
+	background-color: rgba(17, 29, 94, 0.6);
 }
 .skinbg{
 	background-color: #ffbd69;
 }
 
 .redbg{
-	background-color: #c70039;
+	background-color: rgba(199, 0, 57, 0.6);
 }
 .orangebg{
-	background-color: #f37121;
+	background-color: rgba(243, 113, 33, 0.6);
 }
 
 .blueborder{
@@ -49,7 +49,17 @@ body {
 	padding: 1%;
 	border-radius: 15px;
 	display: table-cell;
-	transition: all 0.3s ease-in;
+	transition: all 0.35s ease-in;
+}
+
+.aboutmethumb {
+	border-style: dashed;
+	padding: 1%;
+	margin-left: 30%;
+	border-radius: 15px;
+	display: block;
+	width: 40%;
+	height: auto
 }
 
 .image {
@@ -65,20 +75,24 @@ h3{
 
 .row{
 	display: table;
-    width: 100%; /*Optional*/
-    table-layout: fixed; /*Optional*/
-	border-spacing: 10px; /*Optional*/
+    width: 100%; 
+    table-layout: fixed; 
+	border-spacing: 10px; 
 }
 .grid {
-	width: 70%;
-	padding: 15%;
+	width: 90%;
+	padding: 5%;
 }
 
 .scale-up {
-	transform: scale(1.8);
+	transform: scale(2.2);
 	font-size: small !important;
 }
 .scale-down {
 	transform: scale(0.0);
 	display: hidden;
+}
+
+.scale-onegrid {
+	transform: scale(0.6);
 }

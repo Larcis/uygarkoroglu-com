@@ -4,8 +4,8 @@ import { isMobile } from "react-device-detect";
 
 let thumbTypes = {
     meme: "thumb bluebg orangeborder", 
-    aboutme: "thumb bluebg orangeborder",
-    works: "thumb redbg orangeborder"
+    aboutme: "aboutmethumb redbg orangeborder",
+    works: "thumb orangebg skinborder"
 }
 
 export default class Thumb extends React.Component{
@@ -28,8 +28,16 @@ export default class Thumb extends React.Component{
             neighbours.push(document.getElementById(gridId + "_" + coords[i].x + "_" + coords[i].y));
         return neighbours;
     }
+    numOfRealNeighbours(arr){
+        let count = 0;
+        for(let i = 0; i < arr.length;i++){
+            if(arr[i]) count++;
+        }
+        return count;
+    }
     applyScaleLogic(div){
         let neighbours = this.getNeighbours(div.id);
+        if(this.numOfRealNeighbours(neighbours) !== 8) return;
         for(let i = 0; i < neighbours.length; i++)
             if(neighbours[i]) neighbours[i].classList.add('scale-down');
         div.classList.add('scale-up');
@@ -37,6 +45,7 @@ export default class Thumb extends React.Component{
     }
     removeScaleLogic(div){
         let neighbours = this.getNeighbours(div.id);
+        if(this.numOfRealNeighbours(neighbours) !== 8) return;
         for(let i = 0; i < neighbours.length; i++)
             if(neighbours[i]) neighbours[i].classList.remove('scale-down');
         div.classList.remove('scale-up');
@@ -45,6 +54,7 @@ export default class Thumb extends React.Component{
         return (
             <div  className={thumbTypes[this.props.thumbType]} id={this.props.id }>
                 <img 
+                    loading="lazy"
                     className="image" 
                     alt="" 
                     src={this.props.data.pp}  
