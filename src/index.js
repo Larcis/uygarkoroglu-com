@@ -18,7 +18,7 @@ let d = {
 	"func": ()=> redirect("https://larcis.github.io/QrReaderWebPage/")
 };
 
-let nof_thumbs = 50;
+let nof_thumbs = 10;
 async function fetchMemes(url){
 	let response = await fetch(url);
 	return response;
@@ -38,13 +38,24 @@ fetchMemes(`https://meme-api.herokuapp.com/gimme/${nof_thumbs}`).then((r)=>{
 				});
 		}
 		
-		ReactDOM.render( <App data={d}/>, document.getElementById('root'));
+		ReactDOM.render(<GridWrapper 
+			data={d}
+			gridId="1"
+			thumbType="meme"
+			/>, document.getElementById('root'));
 	});
 })
 
-function App(props){
+function GridWrapper(props){
+	let columns = 4;
 	if(isMobile)
-		return <Grid nof_columns={2} nof_thumbs={props.data.length} data={props.data}/>;
-	return <Grid nof_columns={4} nof_thumbs={props.data.length} data={props.data}/>;
+		columns = 2;
+	return <Grid
+			gridId={"desktop"+props.gridId}
+			thumbType={props.thumbType} 
+			nof_columns={columns} 
+			nof_thumbs={props.data.length} 
+			data={props.data}
+		/>;
 }
 

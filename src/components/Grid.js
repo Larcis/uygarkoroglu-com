@@ -13,7 +13,12 @@ export default class Grid extends React.Component{
         for(let i= 0; i < this.nof_columns; i++){
             if((i+index) < this.props.nof_thumbs){
                 thumbs.push(
-                    <Thumb data={this.props.data[i + index]} id={row+"_"+i}/>
+                    <Thumb 
+                        data={this.props.data[i + index]} 
+                        id={this.props.gridId+"_"+row+"_"+i} 
+                        key={this.props.gridId+"_col_"+i}
+                        thumbType={this.props.thumbType}
+                        />
                 );
             }
         }
@@ -25,7 +30,7 @@ export default class Grid extends React.Component{
         let row = 0;
         for(i = 0; i < this.props.nof_thumbs; i+=this.nof_columns){
             grid.push(
-                <div className="row">
+                <div className="row" key={this.props.gridId+"_row_"+row}>
                     {
                         this.getThumbs(i, row++)
                     }

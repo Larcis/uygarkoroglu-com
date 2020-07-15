@@ -2,9 +2,15 @@ import React from 'react';
 import '../index.css';
 import { isMobile } from "react-device-detect";
 
+let thumbTypes = {
+    meme: "thumb bluebg orangeborder", 
+    aboutme: "thumb bluebg orangeborder",
+    works: "thumb redbg orangeborder"
+}
+
 export default class Thumb extends React.Component{
     getNeighbours(id){
-        let [row, col] =  id.split('_');
+        let [gridId, row, col] =  id.split('_');
         row = parseInt(row);
         col = parseInt(col);
         let coords = [
@@ -19,7 +25,7 @@ export default class Thumb extends React.Component{
         ];
         let neighbours = [];
         for(let i = 0; i < coords.length; i++)
-            neighbours.push(document.getElementById(coords[i].x+"_"+coords[i].y));
+            neighbours.push(document.getElementById(gridId + "_" + coords[i].x + "_" + coords[i].y));
         return neighbours;
     }
     applyScaleLogic(div){
@@ -37,7 +43,7 @@ export default class Thumb extends React.Component{
     }
     render(){
         return (
-            <div  className="thumb bluebg orangeborder" id={this.props.id }>
+            <div  className={thumbTypes[this.props.thumbType]} id={this.props.id }>
                 <img 
                     className="image" 
                     alt="" 

@@ -55,7 +55,7 @@ body {
 .image {
 	width: 100%;
 	height: auto;
-	border-radius: 15px;
+	border-radius: 3px;
 }
 
 h3{
@@ -75,7 +75,7 @@ h3{
 }
 
 .scale-up {
-	transform: scale(1.4);
+	transform: scale(1.8);
 	font-size: small !important;
 }
 .scale-down {
