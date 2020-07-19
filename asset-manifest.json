@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.dbd84f18.chunk.css",
+    "main.js": "/static/js/main.2764e2d3.chunk.js",
+    "main.js.map": "/static/js/main.2764e2d3.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.07395834.js",
+    "runtime-main.js.map": "/static/js/runtime-main.07395834.js.map",
+    "static/js/2.c68c869d.chunk.js": "/static/js/2.c68c869d.chunk.js",
+    "static/js/2.c68c869d.chunk.js.map": "/static/js/2.c68c869d.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.244fffbf9fc5fd6468e5719ae4739c13.js": "/precache-manifest.244fffbf9fc5fd6468e5719ae4739c13.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.dbd84f18.chunk.css.map": "/static/css/main.dbd84f18.chunk.css.map",
+    "static/js/2.c68c869d.chunk.js.LICENSE.txt": "/static/js/2.c68c869d.chunk.js.LICENSE.txt",
+    "static/media/astar.png": "/static/media/astar.267f11b7.png",
+    "static/media/index.css": "/static/media/bg2.2070f812.gif",
+    "static/media/latinsquare.JPG": "/static/media/latinsquare.8b7f342a.JPG",
+    "static/media/mazesolve.JPG": "/static/media/mazesolve.37717642.JPG",
+    "static/media/me.jpeg": "/static/media/me.041bdec7.jpeg",
+    "static/media/tictactoe.png": "/static/media/tictactoe.edcfec89.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.07395834.js",
+    "static/js/2.c68c869d.chunk.js",
+    "static/css/main.dbd84f18.chunk.css",
+    "static/js/main.2764e2d3.chunk.js"
+  ]
+}
